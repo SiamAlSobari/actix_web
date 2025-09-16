@@ -1,6 +1,6 @@
 use actix_web::{App, HttpResponse, HttpServer, Responder, get, web};
 mod handler;
-use sqlx::{MySqlPool, mysql::MySqlPoolOptions}; // untuk bikin pool // tipe pool
+use sqlx::{MySqlPool, mysql::MySqlPoolOptions}; // untuk bikin p
 #[get("/")]
 async fn index() -> impl Responder {
     HttpResponse::Ok().body("index page")
