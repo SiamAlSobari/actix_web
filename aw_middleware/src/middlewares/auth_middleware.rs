@@ -1,6 +1,8 @@
 use actix_web::{Error, FromRequest, Result, error::ErrorUnauthorized};
 use futures::future::{Ready, ready};
+use serde::Serialize;
 
+#[derive(Serialize)]
 pub struct AuthMiddleware {
     pub user_id: i32,
 }

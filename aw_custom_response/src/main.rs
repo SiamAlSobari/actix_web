@@ -10,7 +10,6 @@ use sqlx::mysql::MySqlPoolOptions;
 pub struct AuthUser {
     pub user_id: i32,
 }
-
 // --- Middleware AuthUser ---
 impl FromRequest for AuthUser {
     type Error = Error;
@@ -45,7 +44,6 @@ async fn index() -> impl Responder {
     };
     HttpResponse::Ok().json(response)
 }
-
 #[get("/profile")]
 async fn profile(user: AuthUser) -> impl Responder {
     let response = Response {
